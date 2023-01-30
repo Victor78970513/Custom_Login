@@ -1,3 +1,4 @@
+import 'package:custom_login/widgets/batman_button.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -66,6 +67,11 @@ class Batman_SignUp extends StatelessWidget {
                     style:
                         GoogleFonts.vidaloka(color: Colors.white, fontSize: 35),
                   ),
+                  Column(
+                    children: [
+                      BatmanButton(text: 'LOGIN'),
+                    ],
+                  )
                 ],
               )),
         ],
