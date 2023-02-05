@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 
-class BatmanScreenCity extends StatelessWidget {
+class BatmanScreenCity extends AnimatedWidget {
+  BatmanScreenCity(Animation animation) : super(listenable: animation);
+
+  Animation<double> get _animationCity => listenable as Animation<double>;
   @override
   Widget build(BuildContext context) {
     return ClipPath(
-      clipper: _CityClipper(),
+      clipper: _CityClipper(_animationCity.value),
       child: Image.asset(
         'assets/city.png',
         fit: BoxFit.contain,
@@ -14,9 +17,17 @@ class BatmanScreenCity extends StatelessWidget {
 }
 
 class _CityClipper extends CustomClipper<Path> {
+  final double progress;
+
+  _CityClipper(this.progress);
   @override
   Path getClip(Size size) {
-    throw UnimplementedError();
+    final path = Path();
+    path.moveTo(0.0, size.height);
+    path.lineTo(size.width, size.height);
+    path.lineTo(size.width / 2, size.height * (1 - progress));
+    path.lineTo(0.0, size.height);
+    return path;
   }
 
   @override

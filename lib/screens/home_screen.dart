@@ -1,5 +1,6 @@
 import 'package:custom_login/screens/batman_screen_buttons_animation.dart';
 import 'package:custom_login/screens/batman_screen_city.dart';
+import 'package:custom_login/screens/batman_signup.dart';
 import 'package:custom_login/screens/batman_titleScreen.dart';
 import 'package:custom_login/widgets/batman_button.dart';
 import 'package:flutter/material.dart';
@@ -35,6 +36,7 @@ class _Batman_SignUpState extends State<Batman_SignUp>
   late Animation<double> _animationLogoOut;
   late Animation<double> _animationBatmanTop;
   late Animation<double> _animationGothamCity;
+  late Animation<double> _animationBatmanSignUp;
 
   void _setUpFirstAnimation() {
     _animationController = AnimationController(
@@ -77,17 +79,22 @@ class _Batman_SignUpState extends State<Batman_SignUp>
 
     _animationLogoOut = CurvedAnimation(
       parent: _animationControllerSignUp,
-      curve: const Interval(0.0, 0.2),
+      curve: const Interval(0.0, 0.20),
     );
 
     _animationBatmanTop = CurvedAnimation(
       parent: _animationControllerSignUp,
-      curve: const Interval(0.35, 0.5),
+      curve: const Interval(0.35, 0.55),
     );
 
     _animationGothamCity = CurvedAnimation(
       parent: _animationControllerSignUp,
-      curve: const Interval(0.6, 0.75),
+      curve: const Interval(0.65, 0.80),
+    );
+
+    _animationBatmanSignUp = CurvedAnimation(
+      parent: _animationControllerSignUp,
+      curve: const Interval(0.85, 1.0, curve: Curves.easeIn),
     );
   }
 
@@ -151,10 +158,17 @@ class _Batman_SignUpState extends State<Batman_SignUp>
                     ),
                   ),
                   Positioned(
-                    top: 150,
+                    top: MediaQuery.of(context).size.height / 5,
+                    left: 40,
+                    right: 40,
+                    child: BatmanScreenCity(_animationGothamCity),
+                  ),
+                  Positioned(
+                    top: MediaQuery.of(context).size.height / 2,
                     left: 0,
                     right: 0,
-                    child: BatmanScreenCity(),
+                    bottom: 0,
+                    child: BatmanScreenSignUp(_animationBatmanSignUp),
                   ),
                   Positioned(
                     top: MediaQuery.of(context).size.height / 2,
