@@ -112,6 +112,7 @@ class _Batman_SignUpState extends State<Batman_SignUp>
   @override
   void dispose() {
     _animationController.dispose();
+    _animationControllerSignUp.dispose();
     super.dispose();
   }
 
