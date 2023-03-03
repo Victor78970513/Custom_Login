@@ -3,8 +3,8 @@
 A new Flutter project.
 
 <p float="left">
-<img src="web/icons/image_1.png" with="200">
-<img src="web/icons/image_2.png" with="200">
+<img src="web/icons/image_1.png" with="20">
+<img src="web/icons/image_2.png" with="20">
 
 
 https://user-images.githubusercontent.com/104875404/222737081-984b6d80-6fa5-4104-80cc-431313e504af.mp4
