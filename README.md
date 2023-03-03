@@ -2,7 +2,7 @@
 
 A new Flutter project.
 
-
+<p float="left">
 <img src="web/icons/image_1.png" with="200">
 
 
