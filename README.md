@@ -1,4 +1,4 @@
-# custom_login
+# custom_login with animation
 
 A new Flutter project.
 
