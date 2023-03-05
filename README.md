@@ -5,7 +5,7 @@ A new Flutter project.
 <p float="left">
 
 <img src="web/icons/image_1.jpeg" width="30%" height="50%">
-<img src="web/icons/image_2.png" width="30%" height="50%">
+<img src="web/icons/image_2.jpeg" width="30%" height="50%">
 
 
 
